@@ -7,7 +7,9 @@ RUN mkdir -p ~/bin \
  && apt-get update \
  && apt-get install -y unzip python-pip 
 
-RUN wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip \
+RUN cd ~/bin \
+ && wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip \
  && unzip terraform_0.11.7_linux_amd64.zip
 
-RUN pip install awscli
+RUN cd ~/bin \
+ && pip install awscli
